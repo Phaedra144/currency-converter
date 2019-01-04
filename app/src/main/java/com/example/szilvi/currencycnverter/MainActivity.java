@@ -9,15 +9,17 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button currencyButt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        currencyButt = findViewById(R.id.currencyButton);
     }
 
     public void convert(View view) {
         EditText amount = findViewById(R.id.amountEditText);
-        Button currencyButt = findViewById(R.id.currencyButton);
         Double amountInDoub = Double.parseDouble(amount.getText().toString());
         String result = "";
         if (currencyButt.getText().equals("EUR to HUF")) {
@@ -27,6 +29,17 @@ public class MainActivity extends AppCompatActivity {
             amountInDoub /= 314;
             result = amountInDoub + " EUR";
         }
-        Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT);
+        Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT).show();
+    }
+
+    public void changeCurrency(View view) {
+        int status = (Integer) view.getTag();
+        if(status == 1) {
+            currencyButt.setText("HUF to EUR");
+            view.setTag(0);
+        } else {
+            currencyButt.setText("EUR to HUF");
+            view.setTag(1);
+        }
     }
 }
