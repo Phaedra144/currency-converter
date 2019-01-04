@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         currencyButt = findViewById(R.id.currencyButton);
+        currencyButt.setTag(1);
     }
 
     public void convert(View view) {
