@@ -26,8 +26,9 @@
         android:layout_width="106dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="13dp"
+        android:onClick="convert"
         android:text="Convert"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/currencyButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/amountEditText" />
@@ -41,14 +42,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/currencyButton"
         app:srcCompat="@drawable/money" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/currencyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="18dp"
+        android:onClick="changeCurrency"
         android:text="EUR to HUF"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/convertButton"
